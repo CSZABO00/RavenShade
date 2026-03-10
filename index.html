@@ -21,6 +21,7 @@
         .lang-btn.active { background-color: #f5f5f4; color: #1c1917; }
         .lang-btn { color: #a8a29e; }
         
+        .service-card { transition: all 0.4s ease; border: 1px solid #292522; }
         .service-card:hover { transform: translateY(-5px); border-color: #57534e; background-color: #292522; }
         
         .gallery-item { overflow: hidden; position: relative; border-radius: 1.5rem; aspect-ratio: 4/5; }
@@ -28,8 +29,6 @@
         .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0); }
         
         .ba-label { position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); padding: 5px 12px; border-radius: 6px; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: white; z-index: 10; }
-        
-        input, textarea { caret-color: white; }
     </style>
 </head>
 <body class="bg-[#1c1917]">
@@ -46,10 +45,10 @@
         </div>
         <div class="hidden md:flex space-x-10 font-bold text-[9px] uppercase tracking-[0.4em] text-stone-400">
             <a href="#gallery" class="hover:text-white transition" data-en="Portfolio" data-ro="Portofoliu" data-hu="Portfólió">Portfolio</a>
-            <a href="#mobile" class="hover:text-white transition" data-en="Remote" data-ro="La Domiciliu" data-hu="Házhoz">Remote</a>
+            <a href="#prices" class="hover:text-white transition" data-en="Prices" data-ro="Prețuri" data-hu="Árak">Prices</a>
             <a href="#contact" class="hover:text-white transition" data-en="Inquiry" data-ro="Contact" data-hu="Kapcsolat">Inquiry</a>
         </div>
-        <a href="https://www.instagram.com/katalin.hairstylist/" target="_blank" class="bg-white text-[#1c1917] px-8 py-2 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] hover:bg-stone-200 transition">Instagram</a>
+        <a href="https://www.instagram.com/katalin.hairstylist/" target="_blank" class="bg-white text-[#1c1917] px-8 py-2 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] hover:bg-stone-200 transition">Reserve</a>
     </nav>
 
     <header class="hero-light-raven h-[60vh] flex items-center justify-center text-center px-4">
@@ -78,7 +77,44 @@
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-[#292522] px-6 border-t border-stone-800">
+    <section id="prices" class="py-24 bg-[#292522] px-6 border-t border-stone-800">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl text-white italic mb-4" data-en="Price List" data-ro="Listă Prețuri" data-hu="Árlista">Price List</h2>
+                <div class="w-24 h-px bg-stone-700 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                <div class="service-card p-5 rounded-2xl flex justify-between items-center bg-[#1c1917]/40">
+                    <span class="text-sm font-bold tracking-wide" data-en="Simple Cut" data-ro="Tuns Simplu" data-hu="Egyszerű Vágás">Simple Cut</span>
+                    <span class="text-stone-500 text-xs">80 - 150 RON</span>
+                </div>
+                <div class="service-card p-5 rounded-2xl flex justify-between items-center bg-[#1c1917]/40">
+                    <span class="text-sm font-bold tracking-wide" data-en="Men's Design" data-ro="Tuns Bărbați" data-hu="Férfi Hajvágás">Men's Design</span>
+                    <span class="text-stone-500 text-xs">80 RON</span>
+                </div>
+                <div class="service-card p-5 rounded-2xl flex justify-between items-center bg-[#1c1917]/40">
+                    <span class="text-sm font-bold tracking-wide" data-en="Wash & Style" data-ro="Spălat & Aranjat" data-hu="Mosás & Beszárítás">Wash & Style</span>
+                    <span class="text-stone-500 text-xs">100 - 200 RON</span>
+                </div>
+                <div class="service-card p-5 rounded-2xl flex justify-between items-center bg-[#1c1917]/40">
+                    <span class="text-sm font-bold tracking-wide" data-en="Color & Cut" data-ro="Vopsit & Tuns" data-hu="Festés & Vágás">Color & Cut</span>
+                    <span class="text-stone-500 text-xs">250 - 400 RON</span>
+                </div>
+                <div class="service-card p-5 rounded-2xl flex justify-between items-center bg-[#1c1917]/40">
+                    <span class="text-sm font-bold tracking-wide" data-en="Braiding" data-ro="Împletituri" data-hu="Fonás">Braiding</span>
+                    <span class="text-stone-500 text-xs">50 - 400 RON</span>
+                </div>
+                <div class="service-card p-5 rounded-2xl flex justify-between items-center bg-[#1c1917]/40">
+                    <span class="text-sm font-bold tracking-wide" data-en="Remote Service" data-ro="La Domiciliu" data-hu="Házhoz Menő">Remote Service</span>
+                    <span class="text-stone-500 text-xs">Custom</span>
+                </div>
+            </div>
+            <p class="mt-10 text-center text-[9px] uppercase tracking-widest text-stone-600 italic" data-en="*Prices vary based on hair length and complexity" data-ro="*Prețurile variază în funcție de lungime și complexitate" data-hu="*Az árak a hajhossztól és az összetettségtől függően változnak">*Prices vary based on hair length and complexity</p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-[#1c1917] px-6">
         <div class="max-w-xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-4xl mb-2 text-white italic" data-en="Send Inquiry" data-ro="Trimite o Cerere" data-hu="Érdeklődés">Send Inquiry</h2>
@@ -88,15 +124,15 @@
             <form id="contact-form" action="https://formspree.io/f/mgonalbo" method="POST" class="space-y-4">
                 <input type="text" name="name" required 
                     data-placeholder-en="Full Name" data-placeholder-ro="Nume Complet" data-placeholder-hu="Teljes Név"
-                    class="w-full bg-[#1c1917] border border-stone-800 rounded-full px-8 py-4 outline-none focus:border-white transition text-sm text-white">
+                    class="w-full bg-[#292522] border border-stone-800 rounded-full px-8 py-4 outline-none focus:border-white transition text-sm text-white">
                 
                 <input type="tel" name="phone" required 
                     data-placeholder-en="Phone Number" data-placeholder-ro="Număr de Telefon" data-placeholder-hu="Telefonszám"
-                    class="w-full bg-[#1c1917] border border-stone-800 rounded-full px-8 py-4 outline-none focus:border-white transition text-sm text-white">
+                    class="w-full bg-[#292522] border border-stone-800 rounded-full px-8 py-4 outline-none focus:border-white transition text-sm text-white">
                 
                 <textarea name="message" rows="4" required
                     data-placeholder-en="Your Message or Question" data-placeholder-ro="Mesajul sau Întrebarea ta" data-placeholder-hu="Üzenet vagy Kérdés"
-                    class="w-full bg-[#1c1917] border border-stone-800 rounded-3xl px-8 py-4 outline-none focus:border-white transition text-sm text-white resize-none"></textarea>
+                    class="w-full bg-[#292522] border border-stone-800 rounded-3xl px-8 py-4 outline-none focus:border-white transition text-sm text-white resize-none"></textarea>
 
                 <input type="hidden" name="_language_context" id="form-lang-hidden" value="en">
 
@@ -114,19 +150,16 @@
 
     <script>
         function changeLang(lang) {
-            // Text translation
             document.querySelectorAll('[data-en]').forEach(el => {
                 const translation = el.getAttribute('data-' + lang);
                 if (translation) el.innerText = translation;
             });
 
-            // Placeholder translation
             document.querySelectorAll('[data-placeholder-en]').forEach(el => {
                 const placeholder = el.getAttribute('data-placeholder-' + lang);
                 if (placeholder) el.setAttribute('placeholder', placeholder);
             });
 
-            // UI update
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-' + lang).classList.add('active');
             document.getElementById('form-lang-hidden').value = lang;
