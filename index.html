@@ -319,7 +319,11 @@
             localStorage.setItem('preferredLang', lang);
         }
 
-        window.onload = () => changeLang(localStorage.getItem('preferredLang') || 'en');
+        window.onload = () => {
+                const savedLang = localStorage.getItem('preferredLang');
+                // If no language is saved yet, default to 'ro'
+                changeLang(savedLang || 'ro');
+            };
     </script>
 </body>
 </html>
