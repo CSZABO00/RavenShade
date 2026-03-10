@@ -8,30 +8,25 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@200;400;700&display=swap');
-        
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #1c1917; color: #d6d3d1; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
         .hero-light-raven { 
             background: linear-gradient(rgba(28,25,23,0.7), rgba(28,25,23,0.7)), 
             url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=1920'); 
             background-size: cover; background-position: center; 
         }
-
         .lang-btn.active { background-color: #f5f5f4; color: #1c1917; }
         .lang-btn { color: #a8a29e; }
-        
+        .service-card { transition: all 0.4s ease; }
         .service-card:hover { transform: translateY(-5px); border-color: #57534e; background-color: #292522; }
-        
         .gallery-item { overflow: hidden; position: relative; border-radius: 1rem; aspect-ratio: 4/5; }
-        .gallery-item img { transition: transform 0.8s ease, filter 0.5s ease; width: 100%; height: 100%; object-fit: cover; }
-        .gallery-item:hover img { transform: scale(1.1); filter: grayscale(0); }
+        .gallery-item img { transition: transform 0.8s ease; width: 100%; height: 100%; object-fit: cover; }
+        .gallery-item:hover img { transform: scale(1.1); }
         .ba-label { position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 4px; font-size: 8px; text-transform: uppercase; letter-spacing: 1px; color: white; z-index: 10; }
-
-        select { -webkit-appearance: none; appearance: none; color: #f5f5f4; }
+        select { -webkit-appearance: none; appearance: none; }
     </style>
 </head>
-<body class="bg-[#1c1917]">
+<body>
 
     <div class="fixed bottom-6 right-6 z-[100] flex bg-black/50 backdrop-blur-md shadow-lg rounded-full p-1 border border-stone-800">
         <button onclick="changeLang('en')" class="lang-btn px-4 py-1 text-[10px] font-bold rounded-full transition" id="btn-en">EN</button>
@@ -44,135 +39,222 @@
             <i class="fa-solid fa-feather-pointed text-stone-600 rotate-180"></i> RAVENSHADE
         </div>
         <div class="hidden md:flex space-x-10 font-bold text-[9px] uppercase tracking-[0.4em] text-stone-400">
-            <a href="#express" class="hover:text-white transition" data-en="Menu" data-ro="Meniul" data-hu="Menü">Menu</a>
+            <a href="#menu" class="hover:text-white transition" data-en="Menu" data-ro="Meniul" data-hu="Menü">Menu</a>
             <a href="#gallery" class="hover:text-white transition" data-en="Gallery" data-ro="Galerie" data-hu="Galéria">Gallery</a>
-            <a href="#mobile" class="hover:text-white transition" data-en="Remote Service" data-ro="Servicii la Domiciliu" data-hu="Házhoz Menő">Remote Service</a>
+            <a href="#mobile" class="hover:text-white transition" data-en="Remote" data-ro="Domiciliu" data-hu="Házhoz">Remote</a>
             <a href="#contact" class="hover:text-white transition" data-en="Inquiry" data-ro="Cerere" data-hu="Érdeklődés">Inquiry</a>
         </div>
-        <a href="https://www.instagram.com/katalin.hairstylist/" target="_blank" class="bg-white text-[#1c1917] px-8 py-2 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] hover:bg-stone-200 transition" 
-           data-en="Reserve" data-ro="Rezervă" data-hu="Időpont">Reserve</a>
+        <a href="https://www.instagram.com/katalin.hairstylist/" target="_blank" class="bg-white text-[#1c1917] px-8 py-2 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] hover:bg-stone-200 transition" data-en="Reserve" data-ro="Rezervă" data-hu="Időpont">Reserve</a>
     </nav>
 
     <header class="hero-light-raven h-[70vh] flex items-center justify-center text-center px-4">
         <div class="max-w-3xl">
-            <span class="text-xs uppercase tracking-[0.5em] text-stone-400 mb-6 block" data-en="Precision in the Shade" data-ro="Precizie în Umbră" data-hu="Precízió az árnyékban">Precision in the Shade</span>
-            <h1 class="text-6xl md:text-8xl mb-8 text-white shadow-xl" data-en="Katalin Hairstylist" data-ro="Katalin Hairstylist" data-hu="Katalin Hairstylist">Katalin Hairstylist</h1>
-            <a href="#express" class="inline-block border border-white text-white px-12 py-4 rounded-full font-bold transition hover:bg-white hover:text-[#1c1917] uppercase tracking-widest text-[10px]" data-en="Explore the Menu" data-ro="Explorează Meniul" data-hu="Menü Megtekintése">Explore the Menu</a>
+            <h1 class="text-6xl md:text-8xl mb-8 text-white" data-en="Katalin Hairstylist" data-ro="Katalin Hairstylist" data-hu="Katalin Hairstylist">Katalin Hairstylist</h1>
+            <a href="#menu" class="inline-block border border-white text-white px-12 py-4 rounded-full font-bold transition hover:bg-white hover:text-[#1c1917] uppercase tracking-widest text-[10px]" data-en="Explore the Menu" data-ro="Explorează Meniul" data-hu="Menü Megtekintése">Explore the Menu</a>
         </div>
     </header>
 
+    <section id="menu" class="py-32 bg-[#292522] px-6 border-t border-stone-800">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl md:text-5xl mb-16 text-white text-center italic" data-en="Service Menu" data-ro="Meniul de Servicii" data-hu="Szolgáltatások">Service Menu</h2>
+            
+            <h3 class="text-xs uppercase tracking-[0.4em] text-stone-500 mb-8 border-b border-stone-700 pb-2" data-en="The Cuts" data-ro="Tuns" data-hu="Hajvágás">The Cuts</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div class="service-card p-6 rounded-3xl border border-stone-800 bg-[#1c1917]">
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-white text-sm" data-en="Simple Cut" data-ro="Tuns simplu" data-hu="Egyszerű hajvágás">Simple Cut</h4>
+                        <span class="text-stone-500 text-xs">80/100/150 Ron</span>
+                    </div>
+                </div>
+                <div class="service-card p-6 rounded-3xl border border-stone-800 bg-[#1c1917]">
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-white text-sm" data-en="Men's Design" data-ro="Tuns bărbați" data-hu="Férfi hajvágás">Men's Design</h4>
+                        <span class="text-stone-500 text-xs">80 Ron</span>
+                    </div>
+                </div>
+                <div class="service-card p-6 rounded-3xl border border-stone-800 bg-[#1c1917]">
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-white text-sm" data-en="Bangs" data-ro="Tuns breton" data-hu="Frufru">Bangs</h4>
+                        <span class="text-stone-500 text-xs">35 Ron</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xs uppercase tracking-[0.4em] text-stone-500 mb-8 border-b border-stone-700 pb-2" data-en="Rituals" data-ro="Ritualuri" data-hu="Ritualék">Rituals</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div class="service-card p-6 rounded-3xl border border-stone-800 bg-[#1c1917]">
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-white text-sm" data-en="Wash" data-ro="Spălat" data-hu="Mosás">Wash</h4>
+                        <span class="text-stone-500 text-xs">30/40/50 Ron</span>
+                    </div>
+                </div>
+                <div class="service-card p-6 rounded-3xl border border-stone-800 bg-[#1c1917]">
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-white text-sm" data-en="Treatment" data-ro="Tratament" data-hu="Kezelés">Treatment</h4>
+                        <span class="text-stone-500 text-xs">50/70/90 Ron</span>
+                    </div>
+                </div>
+                <div class="service-card p-6 rounded-3xl border border-stone-800 bg-[#1c1917]">
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-white text-sm" data-en="Flat Iron" data-ro="Aranjat cu placa" data-hu="Vasalás">Flat Iron</h4>
+                        <span class="text-stone-500 text-xs">50/70/90 Ron</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xs uppercase tracking-[0.4em] text-stone-500 mb-8 border-b border-stone-700 pb-2" data-en="Packages" data-ro="Pachete" data-hu="Csomagok">Packages</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="service-card p-6 rounded-3xl border border-stone-800 bg-[#1c1917]">
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-white text-sm" data-en="Wash + Cut + Style" data-ro="Spălat + Tuns + Aranjat" data-hu="Mosás + Vágás + Beszárítás">Wash + Cut + Style</h4>
+                        <span class="text-stone-500 text-xs">150/200/250 Ron</span>
+                    </div>
+                </div>
+                <div class="service-card p-6 rounded-3xl border border-stone-800 bg-[#1c1917]">
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-white text-sm" data-en="Color + Cut + Style" data-ro="Vopsit + Tuns + Aranjat" data-hu="Festés + Vágás + Beszárítás">Color + Cut + Style</h4>
+                        <span class="text-stone-500 text-xs">250/300/400 Ron</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="mobile" class="py-32 bg-[#1c1917] px-6 border-t border-stone-800">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-xs uppercase tracking-[0.4em] text-stone-500 mb-4" data-en="Location: Cluj-Napoca" data-ro="Locație: Cluj-Napoca" data-hu="Helyszín: Kolozsvár">Location: Cluj-Napoca</h2>
+                    <h3 class="text-4xl md:text-5xl mb-8 text-white italic" data-en="Remote Services" data-ro="Servicii la Domiciliu" data-hu="Házhoz Menő Szolgáltatás">Remote Services</h3>
+                    <p class="text-stone-400 leading-relaxed mb-8" data-en="Bring the salon experience to your private space within Cluj-Napoca. Perfect for weddings, special events, or those with a demanding schedule. I provide professional equipment and premium products at your preferred location." data-ro="Aduceți experiența salonului în spațiul dumneavoastră privat din Cluj-Napoca. Perfect pentru nunți, evenimente speciale sau pentru cei cu un program încărcat. Ofer echipament profesional și produse premium la locația dorită." data-hu="Vigye otthonába a szalonélményt Kolozsváron belül. Tökéletes esküvőkre, különleges eseményekre vagy elfoglalt ügyfelek számára. Professzionális felszerelést és prémium termékeket biztosítok az Ön által választott helyszínen.">
+                        Bring the salon experience to your private space within Cluj-Napoca. Perfect for weddings, special events, or those with a demanding schedule. I provide professional equipment and premium products at your preferred location.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-stone-300">
+                            <i class="fa-solid fa-location-dot text-stone-600 w-5 text-center"></i>
+                            <span class="text-sm" data-en="Exclusively serving the Cluj-Napoca area" data-ro="Deservim exclusiv zona Cluj-Napoca" data-hu="Kizárólag Kolozsvár területén">Exclusively serving the Cluj-Napoca area</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-stone-300">
+                            <i class="fa-solid fa-calendar-check text-stone-600 w-5 text-center"></i>
+                            <span class="text-sm" data-en="Minimum 48h advance booking required" data-ro="Necesită rezervare cu minim 48h înainte" data-hu="Legalább 48 órával előre szükséges foglalni">Minimum 48h advance booking required</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 w-full">
+                    <div class="service-card p-10 rounded-3xl border border-stone-800 bg-[#292522] text-center">
+                        <h4 class="text-white text-xl font-bold mb-4" data-en="On-Site Styling" data-ro="Coafat la Domiciliu" data-hu="Házhoz Menő Frizura">On-Site Styling</h4>
+                        <div class="inline-block px-6 py-2 border border-stone-700 rounded-full mb-8">
+                             <p class="text-stone-300 text-xs uppercase tracking-widest" data-en="Case-by-Case Pricing" data-ro="Preț în funcție de solicitare" data-hu="Személyre szabott árazás">Case-by-Case Pricing</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 gap-3">
+                            <a href="tel:+40721107453" class="flex items-center justify-center gap-3 bg-stone-100 text-stone-900 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-white transition">
+                                <i class="fa-solid fa-phone"></i>
+                                <span data-en="0721107453" data-ro="0721107453" data-hu="0721107453">0721107453</span>
+                            </a>
+
+                            <a href="https://wa.me/40721107453" target="_blank" class="flex items-center justify-center gap-3 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-[#25D366] hover:text-white transition">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span data-en="WhatsApp" data-ro="WhatsApp" data-hu="WhatsApp">WhatsApp</span>
+                            </a>
+                            
+                            <div class="flex items-center my-2">
+                                <div class="flex-grow border-t border-stone-800"></div>
+                                <span class="px-3 text-[9px] text-stone-600 uppercase tracking-widest" data-en="or" data-ro="sau" data-hu="vagy">or</span>
+                                <div class="flex-grow border-t border-stone-800"></div>
+                            </div>
+
+                            <a href="#contact" class="bg-transparent border border-stone-700 text-stone-300 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] hover:border-white hover:text-white transition" data-en="Fill Inquiry Form" data-ro="Completează Cererea" data-hu="Ajánlatkérő űrlap">
+                                Fill Inquiry Form
+                            </a>
+                        </div>
+                        
+                        <p class="mt-8 text-stone-500 text-[10px] italic leading-tight" data-en="Quotes depend on hair length, complexity, and exact location." data-ro="Cotația depinde de lungimea părului, complexitate și locația exactă." data-hu="Az árajánlat függ a haj hosszától, a kért stílustól és a pontos helyszíntől.">
+                            Quotes depend on hair length, complexity, and exact location.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="gallery" class="py-24 bg-[#1c1917] px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="gallery-item">
-                    <img src="image_5ceb80.jpg" alt="Work Showcase" class="grayscale">
-                    <span class="ba-label" data-en="Result" data-ro="Rezultat" data-hu="Eredmény">Result</span>
-                </div>
-                <div class="gallery-item">
-                    <img src="image_5ceb61.jpg" alt="Before" class="grayscale opacity-50">
-                    <span class="ba-label" data-en="Before" data-ro="Înainte" data-hu="Előtte">Before</span>
-                </div>
-                <div class="gallery-item">
-                    <img src="image_5c7095.jpg" alt="Braiding" class="grayscale">
-                    <span class="ba-label" data-en="Braiding" data-ro="Împletituri" data-hu="Fonás">Braiding</span>
-                </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="gallery-item">
+                <img src="image_5ceb80.jpg" alt="After">
+                <span class="ba-label" data-en="After" data-ro="După" data-hu="Utána">After</span>
+            </div>
+            <div class="gallery-item">
+                <img src="image_5ceb61.jpg" alt="Before">
+                <span class="ba-label" data-en="Before" data-ro="Înainte" data-hu="Előtte">Before</span>
+            </div>
+            <div class="gallery-item">
+                <img src="image_5c7095.jpg" alt="Detail">
+                <span class="ba-label" data-en="Detail" data-ro="Detaliu" data-hu="Részlet">Detail</span>
             </div>
         </div>
     </section>
 
     <section id="contact" class="py-32 bg-[#292522] px-6 border-t border-stone-800">
         <div class="max-w-xl mx-auto text-center">
-            <h2 class="text-4xl mb-4 text-white italic" data-en="Connect" data-ro="Conectează-te" data-hu="Kapcsolat">Connect</h2>
-            <p class="text-stone-500 text-xs uppercase tracking-[0.4em] mb-12">By appointment only</p>
-            
-            <form id="contact-form" action="https://formspree.io/f/mgonalbo" method="POST" class="space-y-4 text-left">
+            <h2 class="text-4xl mb-4 text-white italic" data-en="Inquiry" data-ro="Cerere" data-hu="Érdeklődés">Inquiry</h2>
+            <form action="https://formspree.io/f/mgonalbo" method="POST" class="space-y-4 text-left">
                 <input type="text" name="name" required 
-                    data-placeholder-en="Full Name" data-placeholder-ro="Nume Complet" data-placeholder-hu="Teljes Név"
-                    class="w-full bg-[#1c1917] border border-stone-800 rounded-full px-8 py-4 outline-none focus:border-white transition text-sm text-white">
+                    placeholder="Full Name" 
+                    data-en-placeholder="Full Name" data-ro-placeholder="Nume Complet" data-hu-placeholder="Teljes Név"
+                    class="w-full bg-[#1c1917] border border-stone-800 rounded-full px-8 py-4 text-white text-sm">
                 
                 <input type="tel" name="phone" required 
-                    data-placeholder-en="Phone Number" data-placeholder-ro="Număr de Telefon" data-placeholder-hu="Telefonszám"
-                    class="w-full bg-[#1c1917] border border-stone-800 rounded-full px-8 py-4 outline-none focus:border-white transition text-sm text-white">
+                    placeholder="Phone Number" 
+                    data-en-placeholder="Phone Number" data-ro-placeholder="Număr de Telefon" data-hu-placeholder="Telefonszám"
+                    class="w-full bg-[#1c1917] border border-stone-800 rounded-full px-8 py-4 text-white text-sm">
                 
+                <select name="service" class="w-full bg-[#1c1917] border border-stone-800 rounded-full px-8 py-4 text-stone-400 text-sm appearance-none">
+                    <option data-en="Select Service" data-ro="Alege Serviciul" data-hu="Válassz">Select Service</option>
+                    <optgroup data-en="In-Studio" data-ro="În Studio" data-hu="Szalonban">
+                        <option>Simple Cut</option>
+                        <option>Men's Design</option>
+                        <option>Wash + Cut + Style</option>
+                        <option>Color + Cut + Style</option>
+                    </optgroup>
+                    <optgroup data-en="Remote (Cluj-Napoca Only)" data-ro="La Domiciliu (Doar Cluj)" data-hu="Házhoz Menő (Csak Kolozsvár)">
+                        <option>Request Quote for Remote Service</option>
+                    </optgroup>
+                </select>
+
                 <textarea name="message" rows="4" required
-                    data-placeholder-en="Your Message or Question" data-placeholder-ro="Mesajul sau Întrebarea ta" data-placeholder-hu="Üzenet vagy Kérdés"
-                    class="w-full bg-[#1c1917] border border-stone-800 rounded-3xl px-8 py-4 outline-none focus:border-white transition text-sm text-white resize-none"></textarea>
+                    placeholder="Your Message or Question" 
+                    data-en-placeholder="Your Message or Question" data-ro-placeholder="Mesajul sau Întrebarea ta" data-hu-placeholder="Üzenet vagy Kérdés"
+                    class="w-full bg-[#1c1917] border border-stone-800 rounded-3xl px-8 py-4 text-white text-sm resize-none"></textarea>
 
-                <input type="hidden" name="_language_context" id="form-lang-hidden" value="en">
-
-                <button type="submit" id="submit-btn" class="w-full bg-white text-[#1c1917] font-bold py-5 rounded-full hover:bg-stone-200 transition uppercase tracking-[0.3em] text-[10px]" 
-                        data-en="Send Inquiry" data-ro="Trimite Cererea" data-hu="Küldés">Send Inquiry</button>
-                
-                <p id="form-status" class="hidden mt-6 text-center text-xs uppercase tracking-widest text-emerald-500 font-bold"></p>
+                <button type="submit" class="w-full bg-white text-[#1c1917] font-bold py-5 rounded-full uppercase tracking-widest text-[10px]" data-en="Send" data-ro="Trimite" data-hu="Küldés">Send Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-20 bg-[#1c1917] text-center border-t border-stone-800">
-        <p class="text-[9px] text-stone-600 uppercase tracking-[0.5em] mb-4">RAVENSHADE STYLING — 2026</p>
-        <p class="text-[9px] text-stone-600 mb-6">Ultrashape Studio | str. Hașdeu nr. 5</p>
-    </footer>
-
     <script>
         function changeLang(lang) {
-            // Translate text
+            // Update Inner Text
             document.querySelectorAll('[data-en]').forEach(el => {
                 const translation = el.getAttribute('data-' + lang);
-                if (translation) el.innerText = translation;
+                if (translation) {
+                    if (el.tagName === 'OPTGROUP') el.label = translation;
+                    else el.innerText = translation;
+                }
             });
 
-            // Translate placeholders
-            document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-                const placeholder = el.getAttribute('data-placeholder-' + lang);
-                if (placeholder) el.setAttribute('placeholder', placeholder);
+            // Update Placeholders
+            document.querySelectorAll('[data-' + lang + '-placeholder]').forEach(el => {
+                el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
             });
 
+            // Update Active Buttons
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.getElementById('btn-' + lang);
-            if (activeBtn) activeBtn.classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
             
-            document.getElementById('form-lang-hidden').value = lang;
             localStorage.setItem('preferredLang', lang);
         }
-
-        const form = document.getElementById("contact-form");
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const status = document.getElementById("form-status");
-            const btn = document.getElementById("submit-btn");
-            const lang = localStorage.getItem('preferredLang') || 'en';
-            
-            const msgs = {
-                en: "Success! I'll contact you soon.",
-                ro: "Succes! Te voi contacta curând.",
-                hu: "Sikeres küldés! Hamarosan kereslek."
-            };
-
-            btn.disabled = true;
-            btn.innerText = "...";
-
-            const data = new FormData(e.target);
-            fetch(e.target.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    status.innerText = msgs[lang];
-                    status.classList.remove("hidden");
-                    form.reset();
-                    btn.classList.add("hidden");
-                } else {
-                    status.innerText = "Error. Please try again.";
-                    status.classList.remove("hidden");
-                    btn.disabled = false;
-                }
-            }).catch(() => {
-                status.innerText = "Network error.";
-                status.classList.remove("hidden");
-                btn.disabled = false;
-            });
-        });
 
         window.onload = () => changeLang(localStorage.getItem('preferredLang') || 'en');
     </script>
