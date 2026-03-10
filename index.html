@@ -122,4 +122,59 @@
 
             // Placeholder translation
             document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-                const placeholder = el.
+                const placeholder = el.getAttribute('data-placeholder-' + lang);
+                if (placeholder) el.setAttribute('placeholder', placeholder);
+            });
+
+            // UI update
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+            document.getElementById('form-lang-hidden').value = lang;
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        const form = document.getElementById("contact-form");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const status = document.getElementById("form-status");
+            const btn = document.getElementById("submit-btn");
+            const lang = localStorage.getItem('preferredLang') || 'en';
+            
+            const msgs = {
+                en: "Success! Your message was sent.",
+                ro: "Succes! Mesajul a fost trimis.",
+                hu: "Sikeres! Az üzenetet elküldtük."
+            };
+
+            btn.disabled = true;
+            btn.style.opacity = "0.5";
+
+            const data = new FormData(e.target);
+            fetch(e.target.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerText = msgs[lang];
+                    status.classList.remove("hidden");
+                    form.reset();
+                    btn.classList.add("hidden");
+                } else {
+                    status.innerText = "Error. Please try again.";
+                    status.classList.remove("hidden");
+                    btn.disabled = false;
+                    btn.style.opacity = "1";
+                }
+            }).catch(() => {
+                status.innerText = "Connection error.";
+                status.classList.remove("hidden");
+                btn.disabled = false;
+                btn.style.opacity = "1";
+            });
+        });
+
+        window.onload = () => changeLang(localStorage.getItem('preferredLang') || 'en');
+    </script>
+</body>
+</html>
