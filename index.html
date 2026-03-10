@@ -120,23 +120,23 @@
         </div>
     </section>
 
-<section id="mobile" class="py-32 bg-[#1c1917] px-6 border-t border-stone-800">
+    <section id="mobile" class="py-32 bg-[#1c1917] px-6 border-t border-stone-800">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
                     <h2 class="text-xs uppercase tracking-[0.4em] text-stone-500 mb-4" data-en="Location: Cluj-Napoca" data-ro="Locație: Cluj-Napoca" data-hu="Helyszín: Kolozsvár">Location: Cluj-Napoca</h2>
                     <h3 class="text-4xl md:text-5xl mb-8 text-white italic" data-en="Remote Services" data-ro="Servicii la Domiciliu" data-hu="Házhoz Menő Szolgáltatás">Remote Services</h3>
-                    <p class="text-stone-400 leading-relaxed mb-8" data-en="Bring the salon experience to your private space within Cluj-Napoca. Perfect for weddings, special events, or those with a demanding schedule. I provide professional equipment and premium products at your preferred location." data-ro="Aduceți experiența salonului în spațiul dumneavoastră privat din Cluj-Napoca. Perfect pentru nunți, evenimente speciale sau pentru cei cu un program încărcat. Ofer echipament profesional și produse premium la locația dorită." data-hu="Vigye otthonába a szalonélményt Kolozsváron belül. Tökéletes esküvőkre, különleges eseményekre vagy elfoglalt ügyfelek számára. Professzionális felszerelést és prémium termékeket biztosítok az Ön által választott helyszínen.">
-                        Bring the salon experience to your private space within Cluj-Napoca. Perfect for weddings, special events, or those with a demanding schedule. I provide professional equipment and premium products at your preferred location.
+                    <p class="text-stone-400 leading-relaxed mb-8" data-en="Bring the salon experience to your private space within Cluj-Napoca. Perfect for weddings, special events, or those with a demanding schedule." data-ro="Aduceți experiența salonului în spațiul dumneavoastră privat din Cluj-Napoca. Perfect pentru nunți sau evenimente speciale." data-hu="Vigye otthonába a szalonélményt Kolozsváron belül. Tökéletes esküvőkre vagy különleges eseményekre.">
+                        Bring the salon experience to your private space within Cluj-Napoca. Perfect for weddings, special events, or those with a demanding schedule.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-center gap-4 text-stone-300">
-                            <i class="fa-solid fa-location-dot text-stone-600 w-5 text-center"></i>
-                            <span class="text-sm" data-en="Exclusively serving the Cluj-Napoca area" data-ro="Deservim exclusiv zona Cluj-Napoca" data-hu="Kizárólag Kolozsvár területén">Exclusively serving the Cluj-Napoca area</span>
+                            <i class="fa-solid fa-location-dot text-stone-600 w-5"></i>
+                            <span class="text-sm" data-en="Exclusively serving Cluj-Napoca" data-ro="Deservim exclusiv zona Cluj-Napoca" data-hu="Kizárólag Kolozsvár területén">Exclusively serving Cluj-Napoca</span>
                         </div>
                         <div class="flex items-center gap-4 text-stone-300">
-                            <i class="fa-solid fa-calendar-check text-stone-600 w-5 text-center"></i>
-                            <span class="text-sm" data-en="Minimum 48h advance booking required" data-ro="Necesită rezervare cu minim 48h înainte" data-hu="Legalább 48 órával előre szükséges foglalni">Minimum 48h advance booking required</span>
+                            <i class="fa-solid fa-calendar-check text-stone-600 w-5"></i>
+                            <span class="text-sm" data-en="Minimum 48h advance booking" data-ro="Necesită rezervare cu minim 48h înainte" data-hu="Legalább 48 órával előre szükséges foglalni">Minimum 48h advance booking</span>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@
                                 <span data-en="0721107453" data-ro="0721107453" data-hu="0721107453">0721107453</span>
                             </a>
 
-                            <a href="https://wa.me/40721107453" target="_blank" class="flex items-center justify-center gap-3 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-[#25D366] hover:text-white transition">
+                            <a href="https://wa.me/+40721107453" target="_blank" class="flex items-center justify-center gap-3 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-[#25D366] hover:text-white transition">
                                 <i class="fa-brands fa-whatsapp text-lg"></i>
                                 <span data-en="WhatsApp" data-ro="WhatsApp" data-hu="WhatsApp">WhatsApp</span>
                             </a>
@@ -169,10 +169,6 @@
                                 Fill Inquiry Form
                             </a>
                         </div>
-                        
-                        <p class="mt-8 text-stone-500 text-[10px] italic leading-tight" data-en="Quotes depend on hair length, complexity, and exact location." data-ro="Cotația depinde de lungimea părului, complexitate și locația exactă." data-hu="Az árajánlat függ a haj hosszától, a kért stílustól és a pontos helyszíntől.">
-                            Quotes depend on hair length, complexity, and exact location.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -199,7 +195,13 @@
     <section id="contact" class="py-32 bg-[#292522] px-6 border-t border-stone-800">
         <div class="max-w-xl mx-auto text-center">
             <h2 class="text-4xl mb-4 text-white italic" data-en="Inquiry" data-ro="Cerere" data-hu="Érdeklődés">Inquiry</h2>
-            <form action="https://formspree.io/f/mgonalbo" method="POST" class="space-y-4 text-left">
+            
+            <div id="form-success" class="hidden mb-8 p-6 bg-stone-800 border border-stone-700 rounded-3xl">
+                <i class="fa-regular fa-circle-check text-white text-3xl mb-4"></i>
+                <p class="text-white font-bold text-sm" data-en="Message sent!" data-ro="Mesaj trimis!" data-hu="Üzenet elküldve!">Message sent!</p>
+            </div>
+
+            <form id="inquiry-form" action="https://formspree.io/f/mgonalbo" method="POST" class="space-y-4 text-left">
                 <input type="text" name="name" required 
                     placeholder="Full Name" 
                     data-en-placeholder="Full Name" data-ro-placeholder="Nume Complet" data-hu-placeholder="Teljes Név"
@@ -218,24 +220,90 @@
                         <option>Wash + Cut + Style</option>
                         <option>Color + Cut + Style</option>
                     </optgroup>
-                    <optgroup data-en="Remote (Cluj-Napoca Only)" data-ro="La Domiciliu (Doar Cluj)" data-hu="Házhoz Menő (Csak Kolozsvár)">
+                    <optgroup data-en="Remote (Cluj Only)" data-ro="La Domiciliu (Doar Cluj)" data-hu="Házhoz (Csak Kolozsvár)">
                         <option>Request Quote for Remote Service</option>
                     </optgroup>
                 </select>
 
                 <textarea name="message" rows="4" required
-                    placeholder="Your Message or Question" 
-                    data-en-placeholder="Your Message or Question" data-ro-placeholder="Mesajul sau Întrebarea ta" data-hu-placeholder="Üzenet vagy Kérdés"
+                    placeholder="Message" 
+                    data-en-placeholder="Message" data-ro-placeholder="Mesaj" data-hu-placeholder="Üzenet"
                     class="w-full bg-[#1c1917] border border-stone-800 rounded-3xl px-8 py-4 text-white text-sm resize-none"></textarea>
 
-                <button type="submit" class="w-full bg-white text-[#1c1917] font-bold py-5 rounded-full uppercase tracking-widest text-[10px]" data-en="Send" data-ro="Trimite" data-hu="Küldés">Send Inquiry</button>
+                <button type="submit" id="form-submit-btn" class="w-full bg-white text-[#1c1917] font-bold py-5 rounded-full uppercase tracking-widest text-[10px]" data-en="Send" data-ro="Trimite" data-hu="Küldés">Send Inquiry</button>
             </form>
         </div>
     </section>
 
+    <footer class="py-12 bg-[#1c1917] px-6 border-t border-stone-800">
+        <div class="max-w-5xl mx-auto flex flex-col items-center">
+
+            <div class="text-center mb-8 w-full max-w-md mx-auto">
+                <p class="text-stone-400 text-[10px] uppercase tracking-widest mb-4">
+                    Strada Bogdan Petriceicu Hasdeu 5, Cluj-Napoca
+                </p>
+                
+                <div class="w-full h-48 rounded-2xl overflow-hidden mb-4 border border-stone-800 opacity-80 hover:opacity-100 transition grayscale">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2733.1259521361955!2d23.579698976863384!3d46.76241477113038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490e2d2a2894c7%3A0x1765e42d886019e4!2sStrada%20Bogdan%20Petriceicu%20Hasdeu%205%2C%20Cluj-Napoca!5e0!3m2!1sen!2sro!4v1710000000000!5m2!1sen!2sro" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <a href="https://maps.app.goo.gl/TWhvVre8DsmT23hWA" target="_blank" class="text-white text-[9px] font-bold uppercase tracking-[0.2em] border-b border-stone-700 pb-1 hover:border-white transition">
+                    <i class="fa-solid fa-location-dot mr-2"></i> Open in Google Maps
+                </a>
+            </div>
+
+
+            <div class="flex space-x-8 mb-8">
+                <a href="https://www.instagram.com/katalin.hairstylist/" target="_blank" class="text-stone-400 hover:text-white transition text-xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@katalin.hairstylist" target="_blank" class="text-stone-400 hover:text-white transition text-xl">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
     <script>
+        const form = document.getElementById("inquiry-form");
+        const successMsg = document.getElementById("form-success");
+        const submitBtn = document.getElementById("form-submit-btn");
+
+        // AJAX Form Submission
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerText = "...";
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: new FormData(event.target),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    form.classList.add("hidden");
+                    successMsg.classList.remove("hidden");
+                } else {
+                    alert("Error. Please try WhatsApp.");
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                alert("Connection error.");
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Language Management
         function changeLang(lang) {
-            // Update Inner Text
             document.querySelectorAll('[data-en]').forEach(el => {
                 const translation = el.getAttribute('data-' + lang);
                 if (translation) {
@@ -243,16 +311,11 @@
                     else el.innerText = translation;
                 }
             });
-
-            // Update Placeholders
             document.querySelectorAll('[data-' + lang + '-placeholder]').forEach(el => {
                 el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
             });
-
-            // Update Active Buttons
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-' + lang).classList.add('active');
-            
             localStorage.setItem('preferredLang', lang);
         }
 
